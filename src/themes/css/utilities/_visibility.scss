@@ -1,0 +1,58 @@
+[v-cloak],
+.hidden {
+  display: none;
+}
+
+.hidden-xs {
+  display: none;
+
+  @media only screen and (min-width:48em) {
+    display: inherit
+  }
+}
+
+.hidden-md {
+  @media only screen and (min-width:48em) {
+    display: none;
+  }
+}
+
+@media only screen and (min-width:768px) {
+  .visible-xs {
+    display: none;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.other {
+  width: 90%;
+  height: 70px;
+  align-items: center;
+  padding-left: 30px;
+  border-radius: 5px;
+  color: #000;
+  background-color: map-get($colors, 'white-smoke');
+  cursor: pointer;
+}
+
+.text-b {
+  color: #000;
+  font-family: Verdana;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 19px;
+
+  &--mrb10 {
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,81 @@
+$motion-main: cubic-bezier(0.4, 0.0, 0.2, 1);
+$duration-main: .3s;
+
+$motion-exit: cubic-bezier(0.4, 0.0, 1, 1);
+$duration-exit: .3s;
+
+.fade-enter-active {
+  transition: opacity $duration-main;
+}
+
+.fade-leave-active {
+  transition: opacity $duration-exit;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-in {
+  &-down-enter-active,
+  &-up-enter-active{
+    transition: all $duration-main $motion-main;
+  }
+
+  &-down-leave-active,
+  &-up-leave-active {
+    transition: all $duration-exit $motion-exit;
+  }
+
+  &-down-enter,
+  &-down-leave-to,
+  &-up-enter,
+  &-up-leave-to {
+    opacity: 0;
+  }
+
+  &-down-enter,
+  &-down-leave-to {
+    transform: translateY(-100%);
+  }
+
+  &-up-enter,
+  &-up-leave-to {
+    transform: translateY(100%);
+  }
+}
+
+.move-opacity {
+  &-move {
+    transition: 600ms ease-in-out 50ms;
+    transition-property: transform,opacity;
+  }
+  &-enter-active {
+     transition: 300ms ease-out;
+     transition-property: transform,opacity;
+  }
+  &-leave-active {
+    transition: 200ms ease-in;
+    transition-property: transform,opacity;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+  }
+  &-enter,
+  &-leave-to {
+    transform: translateZ(0) scale(0.3);
+    opacity: 0;
+  }
+}
+.keyboard-leave-active, .keyboard-enter-active {
+  transition: transform .4s ease-out;
+}
+
+.keyboard-leave-to, .keyboard-enter {
+  transform: translateY(100%);
+}
+
+.keyboard-enter-to, .keyboard-leave {
+  transform: translate(0%);
+}

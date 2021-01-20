@@ -1,0 +1,157 @@
+@font-face {
+  font-family: 'Verdana';
+  src: url('../assets/fonts/verdana/Verdana-BoldItalic.eot');
+  src: url('../assets/fonts/verdana/Verdana-BoldItalic.eot?#iefix') format('embedded-opentype'),
+  url('../assets/fonts/verdana/Verdana-BoldItalic.woff') format('woff'),
+  url('../assets/fonts/verdana/Verdana-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Verdana';
+  src: url('../assets/fonts/verdana/Verdana.eot');
+  src: url('../assets/fonts/verdana/Verdana.eot?#iefix') format('embedded-opentype'),
+  url('../assets/fonts/verdana/Verdana.woff') format('woff'),
+  url('../assets/fonts/verdana/Verdana.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Verdana';
+  src: url('../assets/fonts/verdana/Verdana-Bold.eot');
+  src: url('../assets/fonts/verdana/Verdana-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../assets/fonts/verdana/Verdana-Bold.woff') format('woff'),
+  url('../assets/fonts/verdana/Verdana-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Verdana';
+  src: url('../assets/fonts/verdana/Verdana-Italic.eot');
+  src: url('../assets/fonts/verdana/Verdana-Italic.eot?#iefix') format('embedded-opentype'),
+  url('../assets/fonts/verdana/Verdana-Italic.woff') format('woff'),
+  url('../assets/fonts/verdana/Verdana-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+// Global styles for text
+body {
+  font-size: 14px;
+  font-family: 'Verdana', sans-serif;
+  font-weight: 400;
+  color: #232324;
+}
+
+h1,
+.h1 {
+  font-size: 48px;
+}
+
+h2,
+.h2 {
+  font-size: 36px;
+
+  @media (max-width: 767px) {
+    font-size: 24px;
+  }
+}
+h3,
+.h3 {
+  font-size: 24px;
+}
+h4,
+.h4 {
+  font-size: 18px;
+}
+h5,
+.h5 {
+  font-size: 14px;
+}
+h6,
+.h6 {
+  font-size: 12px;
+}
+
+// Atomic styles for text
+.serif {
+  font-family: 'Playfair Display', serif;
+}
+.sans-serif {
+  font-family: 'Roboto', sans-serif;
+}
+.italic {
+  font-style: italic;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.align-center {
+  text-align: center;
+}
+.align-right {
+  text-align: right;
+}
+.align-left {
+  text-align: left;
+}
+.align-justify {
+  text-align: justify;
+}
+
+.weight-400 {
+  font-weight: 400;
+}
+.weight-500 {
+  font-weight: 500;
+}
+.weight-600 {
+  font-weight: 600;
+}
+.weight-700 {
+  font-weight: 700;
+}
+.weight-900 {
+  font-weight: 900;
+}
+
+// Sizes
+.fs-medium-small {
+  font-size: 14px;
+}
+.fs-medium {
+  font-size: 18px;
+}
+.fs-large {
+  font-size: 24px;
+}
+.fs-big {
+  font-size: 36px;
+}
+
+@mixin line-height {
+  @for $i from 0 to 80 {
+    .lh#{$i} {
+      line-height: #{$i}px;
+    }
+  }
+}
+
+@include line-height;
+
+/* @todo its not in styleguite therefore shouldn't be here, ask Karol Bzik */
+
+@mixin font-size {
+  @for $i from 0 to 90 {
+    .fs#{$i} {
+      font-size: #{$i}px;
+    }
+  }
+}
+
+@include font-size;

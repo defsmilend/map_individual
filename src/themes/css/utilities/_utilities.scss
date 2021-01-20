@@ -1,0 +1,110 @@
+@import '~theme/css/variables/colors';
+@import '~theme/css/helpers/functions/color';
+$color-gray8: color(gray8);
+$white-smoke: color(white-smoke);
+$gray9: color(gray9);
+$white: color(white);
+
+.no-outline {
+  outline: 0;
+}
+
+.pointer {
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a.underline:after,
+a:not(.no-underline):hover:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: color(primary, $colors-border)
+}
+
+.no-underline:hover:after {
+  height: 0;
+}
+
+.main-content {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1132px;
+}
+
+.scroll-area {
+  position: relative;
+  width: 100%;
+  height: 690px;
+  overflow-y: auto;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 10px;
+  max-height: 591px;
+  display: block;
+
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: $gray9;
+  border-left: 5px solid $white;
+  border-radius: 3px;
+}
+.custom-scroll::-webkit-scrollbar-track-piece {
+  margin-bottom: 53px;
+  background-color: $white-smoke;
+  border-left: 5px solid $white;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+
+  &:hover {
+    display: block;
+  }
+}
+
+.cross {
+  margin-right: 32px;
+}
+
+.field {
+  height: 70px;
+}
+
+.reset {
+  width: 30px;
+  height: 30px;
+  transform: rotate(45deg);
+  background: #000;
+  color: #fff;
+}
+
+input[type='checkbox'] {
+  background: transparent;
+  height: 25px;
+  width: 25px;
+  border: 3px solid #000;
+  border-radius: 2px;
+}
+
+.cover {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('/assets/placeholder.png');
+
+  &-bgt {
+    background-position: top center;
+  }
+}
+
+@media (hover: none) {
+  a:not(.no-underline):after {
+    display: none;
+  }
+}

@@ -1,0 +1,33 @@
+$icon-size: 56;
+@mixin background($background) {
+  background: url($background) no-repeat center
+}
+@mixin icon-size {
+  @each $i in $icon-size {
+    .is#{$i} {
+      width: #{$i}px;
+      height: #{$i}px;
+    }
+  }
+}
+.search-icon {
+  width: 32px;
+  height: 32px;
+  left: 23px;
+  top: 16px;
+  background-image: url('/assets/keyboard/search.svg');
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: 50%, 50%;
+}
+.delete {
+  width: 126px;
+  height: 43px;
+  right: 0;
+  background-image: url('/assets/keyboard/back.svg');
+  background-size: 23%;
+  background-repeat: no-repeat;
+  background-position: 50%, 50%;
+}
+
+@include icon-size
